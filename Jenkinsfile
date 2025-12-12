@@ -29,7 +29,7 @@ pipeline {
         stage('Manual Approval') {
             steps { input message: "Deploy to Production?" }
         }
-        stage('Deploy to PROD') {
+        stage('Deploy to PROD and You') {
             steps { sh 'cp target/*.jar ~/prod/ && ~/prod/deploy-prod.sh target/*.jar || true' }
         }
     }
