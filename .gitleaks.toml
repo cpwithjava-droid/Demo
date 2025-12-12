@@ -1,9 +1,1 @@
-title = "Demo Gitleaks rules"
 
-[[rules]]
-id = "generic-secret"
-description = "Generic secret detection"
-regex = '''(?i)(secret|apikey|token)[\s=:]+['"]?[A-Za-z0-9\-_]{10,}['"]?'''
-
-[allowlist]
-paths = ["README.md"]
