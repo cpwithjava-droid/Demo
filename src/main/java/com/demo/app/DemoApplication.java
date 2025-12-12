@@ -43,15 +43,6 @@ public class DemoApplication {
         return new GreetingResponse(message);
     }
 
-    // Fake secrets endpoint for Gitleaks demo
-    @GetMapping("/secrets")
-    public SecretResponse secrets() {
-        logger.warn("GET /secrets called - exposing fake secret!");
-        // Fake API key (Gitleaks will detect this pattern)
-        String fakeApiKey = "AKIAIOSFODNN7EXAMPLE";
-        return new SecretResponse(fakeApiKey);
-    }
-
     // DTO classes
     public static class GreetingRequest {
         private String name;
@@ -78,22 +69,6 @@ public class DemoApplication {
 
         public void setMessage(String message) {
             this.message = message;
-        }
-    }
-
-    public static class SecretResponse {
-        private String secret;
-
-        public SecretResponse(String secret) {
-            this.secret = secret;
-        }
-
-        public String getSecret() {
-            return secret;
-        }
-
-        public void setSecret(String secret) {
-            this.secret = secret;
         }
     }
 }
