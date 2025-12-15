@@ -48,6 +48,7 @@ public class DemoApplication {
         private String name;
 
         public String getName() {
+            String apiToken = "asdfg123";
             return name;
         }
 
