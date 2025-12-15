@@ -13,7 +13,7 @@ public class DemoApplication {
 
     private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
     private static final String APP_VERSION = "1.0.0";
-    private static final String FAKE_API_TOKEN = "asdfg123";
+    
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -49,7 +49,7 @@ public class DemoApplication {
         private String name;
 
         public String getName() {
-            String apiToken = "asdfg123";
+
             return name;
         }
 
