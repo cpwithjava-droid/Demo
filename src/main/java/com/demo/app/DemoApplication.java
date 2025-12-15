@@ -13,7 +13,9 @@ public class DemoApplication {
 
     private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
     private static final String APP_VERSION = "1.0.0";
-     
+    
+    // 🔒 Dummy token for testing Gitleaks
+    private static final String DUMMY_API_TOKEN = "gitleaks-test-token-12345";
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -22,6 +24,8 @@ public class DemoApplication {
     @GetMapping("/hello")
     public String hello() {
         logger.info("GET /hello called");
+        // Using the dummy token in a log (just for demonstration)
+        logger.info("Using dummy API token: {}", DUMMY_API_TOKEN);
         return "Hello from CI/CD pipeline!";
     }
 
@@ -49,7 +53,6 @@ public class DemoApplication {
         private String name;
 
         public String getName() {
-
             return name;
         }
 
